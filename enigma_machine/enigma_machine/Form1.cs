@@ -20,44 +20,73 @@ namespace enigma_machine
         private int txtBox1 = 43;
         private int na = 46;
         private int txtBox2 = 43;
-        public char rotor1(char c)
-        {
-            char[] nastaveni = { 'E','K','M','F','L','G','D','Q','V','Z','N','T','O','W','Y','H','X','U','S','P','A','I','B','R','C','J' };
-            int znakIndex = comboBox1.SelectedIndex;
-            c = (char)comboBox1.Items[nastaveni[znakIndex]];
-            comboBox1.Text = (string)comboBox1.Items[znakIndex + 1];
-            if (comboBox1.Text == "A")
-            {
-                int textIndex = comboBox2.SelectedIndex;
-                comboBox2.Text = (string)comboBox2.Items[textIndex + 1];
-                if (comboBox2.Text == "A")
-                {
-                    int textIndex2 = comboBox3.SelectedIndex;
-                    comboBox3.Text = (string)comboBox2.Items[textIndex2 + 1];
-                }
-            }
-            return c;
-        }
-        public char rotor2(char c)
-        {
-            char[] nastaveni = { 'A', 'J', 'D', 'K', 'S', 'I', 'R', 'U', 'X', 'B','L', 'H', 'W', 'T', 'M', 'C', 'Q', 'G', 'Z', 'N','P', 'Y', 'F', 'V', 'O', 'E' };
-            int znakIndex = comboBox1.SelectedIndex;
-            c = (char)comboBox1.Items[nastaveni[znakIndex]];
-            if (comboBox2.Text == "A")
-            {
-                int textIndex = comboBox3.SelectedIndex;
-                comboBox3.Text = (string)comboBox2.Items[textIndex + 1];
-            }
-            return c;
+        //private char rotory(char c)
+        //{
+        //    char[] nastaveni = { 'E', 'K', 'M', 'F', 'L', 'G', 'D', 'Q', 'V', 'Z', 'N', 'T', 'O', 'W', 'Y', 'H', 'X', 'U', 'S', 'P', 'A', 'I', 'B', 'R', 'C', 'J' };
+        //    int znakIndex = comboBox1.SelectedIndex;
+        //    c = (char)comboBox1.Items[nastaveni[znakIndex]];
+        //    comboBox1.Text = (string)comboBox1.Items[znakIndex + 1];
+        //    if (comboBox1.Text == "A")
+        //    {
+        //        int textIndex = comboBox2.SelectedIndex;
+        //        comboBox2.Text = (string)comboBox2.Items[textIndex + 1];
+        //        if (comboBox2.Text == "A")
+        //        {
+        //            int textIndex2 = comboBox3.SelectedIndex;
+        //            comboBox3.Text = (string)comboBox2.Items[textIndex2 + 1];
+        //        }
+        //    }
+        //    char[] nastaveni2 = { 'A', 'J', 'D', 'K', 'S', 'I', 'R', 'U', 'X', 'B', 'L', 'H', 'W', 'T', 'M', 'C', 'Q', 'G', 'Z', 'N', 'P', 'Y', 'F', 'V', 'O', 'E' };
+        //    znakIndex = comboBox1.SelectedIndex;
+        //    c = (char)comboBox1.Items[nastaveni[znakIndex]];
+        //    if (comboBox2.Text == "A")
+        //    {
+        //        int textIndex = comboBox3.SelectedIndex;
+        //        comboBox3.Text = (string)comboBox2.Items[textIndex + 1];
+        //    }
+        //    char[] nastaveni3 = { 'B', 'D', 'F', 'H', 'J', 'L', 'C', 'P', 'R', 'T', 'X', 'V', 'Z', 'N', 'Y', 'E', 'I', 'W', 'G', 'A', 'K', 'M', 'U', 'S', 'Q', 'O' };
+        //    znakIndex = comboBox1.SelectedIndex;
+        //    c = (char)comboBox1.Items[nastaveni[znakIndex]];
+        //    return c;
+        //}
+        //public char rotor1(char c)
+        //{
+        //    char[] nastaveni = { 'E', 'K', 'M', 'F', 'L', 'G', 'D', 'Q', 'V', 'Z', 'N', 'T', 'O', 'W', 'Y', 'H', 'X', 'U', 'S', 'P', 'A', 'I', 'B', 'R', 'C', 'J' };
+        //    int znakIndex = comboBox1.SelectedIndex;
+        //    c = (char)comboBox1.Items[nastaveni[znakIndex]];
+        //    comboBox1.Text = (string)comboBox1.Items[znakIndex + 1];
+        //    if (comboBox1.Text == "A")
+        //    {
+        //        int textIndex = comboBox2.SelectedIndex;
+        //        comboBox2.Text = (string)comboBox2.Items[textIndex + 1];
+        //        if (comboBox2.Text == "A")
+        //        {
+        //            int textIndex2 = comboBox3.SelectedIndex;
+        //            comboBox3.Text = (string)comboBox2.Items[textIndex2 + 1];
+        //        }
+        //    }
+        //    return c;
+        //}
+        //public char rotor2(char c)
+        //{
+        //    char[] nastaveni = { 'A', 'J', 'D', 'K', 'S', 'I', 'R', 'U', 'X', 'B','L', 'H', 'W', 'T', 'M', 'C', 'Q', 'G', 'Z', 'N','P', 'Y', 'F', 'V', 'O', 'E' };
+        //    int znakIndex = comboBox1.SelectedIndex;
+        //    c = (char)comboBox1.Items[nastaveni[znakIndex]];
+        //    if (comboBox2.Text == "A")
+        //    {
+        //        int textIndex = comboBox3.SelectedIndex;
+        //        comboBox3.Text = (string)comboBox2.Items[textIndex + 1];
+        //    }
+        //    return c;
 
-        }
-        public char rotor3(char c)
-        {
-            char[] nastaveni = {'B', 'D', 'F', 'H', 'J', 'L', 'C', 'P', 'R', 'T','X', 'V', 'Z', 'N', 'Y', 'E', 'I', 'W', 'G', 'A','K', 'M', 'U', 'S', 'Q', 'O' };
-            int znakIndex = comboBox1.SelectedIndex;
-            c = (char)comboBox1.Items[nastaveni[znakIndex]];
-            return c;
-        }
+        //}
+        //public char rotor3(char c)
+        //{
+        //    char[] nastaveni = {'B', 'D', 'F', 'H', 'J', 'L', 'C', 'P', 'R', 'T','X', 'V', 'Z', 'N', 'Y', 'E', 'I', 'W', 'G', 'A','K', 'M', 'U', 'S', 'Q', 'O' };
+        //    int znakIndex = comboBox1.SelectedIndex;
+        //    c = (char)comboBox1.Items[nastaveni[znakIndex]];
+        //    return c;
+        //}
         private void button1_Click(object sender, EventArgs e)
         {
             string text = textBox1.Text;
@@ -84,7 +113,7 @@ namespace enigma_machine
                         c = znaky[j + 1];
                     }
                 }
-                c = rotor1(c);
+                c = Rotor.rotor1(c,comboBox1,comboBox2,comboBox3);
                 c = rotor2(c);
                 c = rotor3(c);
                 c = rotor3(c);
@@ -119,6 +148,38 @@ namespace enigma_machine
             txtBox1 += 26;
             na += 26;
             txtBox2 += 26;
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button29_Click(object sender, EventArgs e)
+        {
+            foreach(Control control in panel1.Controls)
+            {
+                if(control is CheckBox checkBox)
+                {
+                    int pocet =  0;
+                    bool prvni = true;
+                    string prvniClen = "";
+                    string druhyClen = "";
+                    while (pocet < 2)
+                    {
+                        if(checkBox.Checked && prvni)
+                        {
+                            prvniClen = checkBox.Text;
+                            prvni = true;
+                        }
+                        else if(checkBox.Checked && !prvni)
+                        {
+                            druhyClen = checkBox.Text;
+                        }
+                        pocet++;
+                    }
+                }
+            }
         }
     }
 }
