@@ -20,116 +20,50 @@ namespace enigma_machine
         private int txtBox1 = 43;
         private int na = 46;
         private int txtBox2 = 43;
-        //private char rotory(char c)
-        //{
-        //    char[] nastaveni = { 'E', 'K', 'M', 'F', 'L', 'G', 'D', 'Q', 'V', 'Z', 'N', 'T', 'O', 'W', 'Y', 'H', 'X', 'U', 'S', 'P', 'A', 'I', 'B', 'R', 'C', 'J' };
-        //    int znakIndex = comboBox1.SelectedIndex;
-        //    c = (char)comboBox1.Items[nastaveni[znakIndex]];
-        //    comboBox1.Text = (string)comboBox1.Items[znakIndex + 1];
-        //    if (comboBox1.Text == "A")
-        //    {
-        //        int textIndex = comboBox2.SelectedIndex;
-        //        comboBox2.Text = (string)comboBox2.Items[textIndex + 1];
-        //        if (comboBox2.Text == "A")
-        //        {
-        //            int textIndex2 = comboBox3.SelectedIndex;
-        //            comboBox3.Text = (string)comboBox2.Items[textIndex2 + 1];
-        //        }
-        //    }
-        //    char[] nastaveni2 = { 'A', 'J', 'D', 'K', 'S', 'I', 'R', 'U', 'X', 'B', 'L', 'H', 'W', 'T', 'M', 'C', 'Q', 'G', 'Z', 'N', 'P', 'Y', 'F', 'V', 'O', 'E' };
-        //    znakIndex = comboBox1.SelectedIndex;
-        //    c = (char)comboBox1.Items[nastaveni[znakIndex]];
-        //    if (comboBox2.Text == "A")
-        //    {
-        //        int textIndex = comboBox3.SelectedIndex;
-        //        comboBox3.Text = (string)comboBox2.Items[textIndex + 1];
-        //    }
-        //    char[] nastaveni3 = { 'B', 'D', 'F', 'H', 'J', 'L', 'C', 'P', 'R', 'T', 'X', 'V', 'Z', 'N', 'Y', 'E', 'I', 'W', 'G', 'A', 'K', 'M', 'U', 'S', 'Q', 'O' };
-        //    znakIndex = comboBox1.SelectedIndex;
-        //    c = (char)comboBox1.Items[nastaveni[znakIndex]];
-        //    return c;
-        //}
-        //public char rotor1(char c)
-        //{
-        //    char[] nastaveni = { 'E', 'K', 'M', 'F', 'L', 'G', 'D', 'Q', 'V', 'Z', 'N', 'T', 'O', 'W', 'Y', 'H', 'X', 'U', 'S', 'P', 'A', 'I', 'B', 'R', 'C', 'J' };
-        //    int znakIndex = comboBox1.SelectedIndex;
-        //    c = (char)comboBox1.Items[nastaveni[znakIndex]];
-        //    comboBox1.Text = (string)comboBox1.Items[znakIndex + 1];
-        //    if (comboBox1.Text == "A")
-        //    {
-        //        int textIndex = comboBox2.SelectedIndex;
-        //        comboBox2.Text = (string)comboBox2.Items[textIndex + 1];
-        //        if (comboBox2.Text == "A")
-        //        {
-        //            int textIndex2 = comboBox3.SelectedIndex;
-        //            comboBox3.Text = (string)comboBox2.Items[textIndex2 + 1];
-        //        }
-        //    }
-        //    return c;
-        //}
-        //public char rotor2(char c)
-        //{
-        //    char[] nastaveni = { 'A', 'J', 'D', 'K', 'S', 'I', 'R', 'U', 'X', 'B','L', 'H', 'W', 'T', 'M', 'C', 'Q', 'G', 'Z', 'N','P', 'Y', 'F', 'V', 'O', 'E' };
-        //    int znakIndex = comboBox1.SelectedIndex;
-        //    c = (char)comboBox1.Items[nastaveni[znakIndex]];
-        //    if (comboBox2.Text == "A")
-        //    {
-        //        int textIndex = comboBox3.SelectedIndex;
-        //        comboBox3.Text = (string)comboBox2.Items[textIndex + 1];
-        //    }
-        //    return c;
-
-        //}
-        //public char rotor3(char c)
-        //{
-        //    char[] nastaveni = {'B', 'D', 'F', 'H', 'J', 'L', 'C', 'P', 'R', 'T','X', 'V', 'Z', 'N', 'Y', 'E', 'I', 'W', 'G', 'A','K', 'M', 'U', 'S', 'Q', 'O' };
-        //    int znakIndex = comboBox1.SelectedIndex;
-        //    c = (char)comboBox1.Items[nastaveni[znakIndex]];
-        //    return c;
-        //}
+        
         private void button1_Click(object sender, EventArgs e)
         {
-            string text = textBox1.Text;
-            string newText = "";
-            bool prvniNaRadku = true;
-            char[] znaky = new char[panel3.Controls.Count];
-            foreach (Control con in panel3.Controls)
-            {
-                if (con is TextBox textBox)
-                {
-                    int i = 0;
-                    znaky[i] = Char.Parse(textBox.Text);
+            //string text = textBox1.Text;
+            //string newText = "";
+            //bool prvniNaRadku = true;
+            //char[] znaky = new char[panel3.Controls.Count];
+            //foreach (Control con in panel3.Controls)
+            //{
+            //    if (con is TextBox textBox)
+            //    {
+            //        int i = 0;
+            //        znaky[i] = Char.Parse(textBox.Text);
                     
                     
-                }
-            }                                                                                                   
-            for (int i = 0; i < text.Length; i++)
-            {
-                char c = text[i];
-                for(int j = 0; j < znaky.Length; j++)
-                {
-                      if( znaky[j] == c )
-                    {
-                        c = znaky[j + 1];
-                    }
-                }
-                c = Rotor.rotor1(c,comboBox1,comboBox2,comboBox3);
-                c = rotor2(c);
-                c = rotor3(c);
-                c = rotor3(c);
-                c = rotor2(c);
-                c = rotor1(c);
+            //    }
+            //}                                                                                                   
+            //for (int i = 0; i < text.Length; i++)
+            //{
+            //    char c = text[i];
+            //    for(int j = 0; j < znaky.Length; j++)
+            //    {
+            //          if( znaky[j] == c )
+            //        {
+            //            c = znaky[j + 1];
+            //        }
+            //    }
+            //    c = Rotor.rotor1(c,comboBox1,comboBox2,comboBox3);
+            //    c = rotor2(c);
+            //    c = rotor3(c);
+            //    c = rotor3(c);
+            //    c = rotor2(c);
+            //    c = rotor1(c);
 
-                if (i != 0)
-                {
-                    newText = text.Substring(i - 1, i) + c + text.Substring(i + 1);
-                }
-                else
-                {
-                    newText = c + text.Substring(i + 1);
-                }
-            }
-            MessageBox.Show("zašifrovaný text " + newText);
+            //    if (i != 0)
+            //    {
+            //        newText = text.Substring(i - 1, i) + c + text.Substring(i + 1);
+            //    }
+            //    else
+            //    {
+            //        newText = c + text.Substring(i + 1);
+            //    }
+            //}
+            //MessageBox.Show("zašifrovaný text " + newText);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -180,6 +114,256 @@ namespace enigma_machine
                     }
                 }
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            char c = char.Parse(button3.Text);
+            EnigmaEngine enigma = new EnigmaEngine(c);
+            c = enigma.SifrovaniDesifrovani(comboBox1,comboBox2,comboBox3);
+            string s = textBox1.Text;
+            string s2 = s + c;
+            textBox1.Text = s2;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            char c = char.Parse(button4.Text);
+            EnigmaEngine enigma = new EnigmaEngine(c);
+            c = enigma.SifrovaniDesifrovani(comboBox1, comboBox2, comboBox3);
+            string s = textBox1.Text;
+            string s2 = s + c;
+            textBox1.Text = s2;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            char c = char.Parse(button5.Text);
+            EnigmaEngine enigma = new EnigmaEngine(c);
+            c = enigma.SifrovaniDesifrovani(comboBox1, comboBox2, comboBox3);
+            string s = textBox1.Text;
+            string s2 = s + c;
+            textBox1.Text = s2;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            char c = char.Parse(button6.Text);
+            EnigmaEngine enigma = new EnigmaEngine(c);
+            c = enigma.SifrovaniDesifrovani(comboBox1, comboBox2, comboBox3);
+            string s = textBox1.Text;
+            string s2 = s + c;
+            textBox1.Text = s2;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            char c = char.Parse(button7.Text);
+            EnigmaEngine enigma = new EnigmaEngine(c);
+            c = enigma.SifrovaniDesifrovani(comboBox1, comboBox2, comboBox3);
+            string s = textBox1.Text;
+            string s2 = s + c;
+            textBox1.Text = s2;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            char c = char.Parse(button8.Text);
+            EnigmaEngine enigma = new EnigmaEngine(c);
+            c = enigma.SifrovaniDesifrovani(comboBox1, comboBox2, comboBox3);
+            string s = textBox1.Text;
+            string s2 = s + c;
+            textBox1.Text = s2;
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            char c = char.Parse(button9.Text);
+            EnigmaEngine enigma = new EnigmaEngine(c);
+            c = enigma.SifrovaniDesifrovani(comboBox1, comboBox2, comboBox3);
+            string s = textBox1.Text;
+            string s2 = s + c;
+            textBox1.Text = s2;
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            char c = char.Parse(button10.Text);
+            EnigmaEngine enigma = new EnigmaEngine(c);
+            c = enigma.SifrovaniDesifrovani(comboBox1, comboBox2, comboBox3);
+            string s = textBox1.Text;
+            string s2 = s + c;
+            textBox1.Text = s2;
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            char c = char.Parse(button11.Text);
+            EnigmaEngine enigma = new EnigmaEngine(c);
+            c = enigma.SifrovaniDesifrovani(comboBox1, comboBox2, comboBox3);
+            string s = textBox1.Text;
+            string s2 = s + c;
+            textBox1.Text = s2;
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            char c = char.Parse(button12.Text);
+            EnigmaEngine enigma = new EnigmaEngine(c);
+            c = enigma.SifrovaniDesifrovani(comboBox1, comboBox2, comboBox3);
+            string s = textBox1.Text;
+            string s2 = s + c;
+            textBox1.Text = s2;
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            char c = char.Parse(button14.Text);
+            EnigmaEngine enigma = new EnigmaEngine(c);
+            c = enigma.SifrovaniDesifrovani(comboBox1, comboBox2, comboBox3);
+            string s = textBox1.Text;
+            string s2 = s + c;
+            textBox1.Text = s2;
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            char c = char.Parse(button15.Text);
+            EnigmaEngine enigma = new EnigmaEngine(c);
+            c = enigma.SifrovaniDesifrovani(comboBox1, comboBox2, comboBox3);
+            string s = textBox1.Text;
+            string s2 = s + c;
+            textBox1.Text = s2;
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            char c = char.Parse(button16.Text);
+            EnigmaEngine enigma = new EnigmaEngine(c);
+            c = enigma.SifrovaniDesifrovani(comboBox1, comboBox2, comboBox3);
+            string s = textBox1.Text;
+            string s2 = s + c;
+            textBox1.Text = s2;
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            char c = char.Parse(button17.Text);
+            EnigmaEngine enigma = new EnigmaEngine(c);
+            c = enigma.SifrovaniDesifrovani(comboBox1, comboBox2, comboBox3);
+            string s = textBox1.Text;
+            string s2 = s + c;
+            textBox1.Text = s2;
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            char c = char.Parse(button18.Text);
+            EnigmaEngine enigma = new EnigmaEngine(c);
+            c = enigma.SifrovaniDesifrovani(comboBox1, comboBox2, comboBox3);
+            string s = textBox1.Text;
+            string s2 = s + c;
+            textBox1.Text = s2;
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            char c = char.Parse(button19.Text);
+            EnigmaEngine enigma = new EnigmaEngine(c);
+            c = enigma.SifrovaniDesifrovani(comboBox1, comboBox2, comboBox3);
+            string s = textBox1.Text;
+            string s2 = s + c;
+            textBox1.Text = s2;
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            char c = char.Parse(button20.Text);
+            EnigmaEngine enigma = new EnigmaEngine(c);
+            c = enigma.SifrovaniDesifrovani(comboBox1, comboBox2, comboBox3);
+            string s = textBox1.Text;
+            string s2 = s + c;
+            textBox1.Text = s2;
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            char c = char.Parse(button21.Text);
+            EnigmaEngine enigma = new EnigmaEngine(c);
+            c = enigma.SifrovaniDesifrovani(comboBox1, comboBox2, comboBox3);
+            string s = textBox1.Text;
+            string s2 = s + c;
+            textBox1.Text = s2;
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            char c = char.Parse(button22.Text);
+            EnigmaEngine enigma = new EnigmaEngine(c);
+            c = enigma.SifrovaniDesifrovani(comboBox1, comboBox2, comboBox3);
+            string s = textBox1.Text;
+            string s2 = s + c;
+            textBox1.Text = s2;
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            char c = char.Parse(button23.Text);
+            EnigmaEngine enigma = new EnigmaEngine(c);
+            c = enigma.SifrovaniDesifrovani(comboBox1, comboBox2, comboBox3);
+            string s = textBox1.Text;
+            string s2 = s + c;
+            textBox1.Text = s2;
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            char c = char.Parse(button24.Text);
+            EnigmaEngine enigma = new EnigmaEngine(c);
+            c = enigma.SifrovaniDesifrovani(comboBox1, comboBox2, comboBox3);
+            string s = textBox1.Text;
+            string s2 = s + c;
+            textBox1.Text = s2;
+        }
+
+        private void button25_Click(object sender, EventArgs e)
+        {
+            char c = char.Parse(button25.Text);
+            EnigmaEngine enigma = new EnigmaEngine(c);
+            c = enigma.SifrovaniDesifrovani(comboBox1, comboBox2, comboBox3);
+            string s = textBox1.Text;
+            string s2 = s + c;
+            textBox1.Text = s2;
+        }
+
+        private void button26_Click(object sender, EventArgs e)
+        {
+            char c = char.Parse(button26.Text);
+            EnigmaEngine enigma = new EnigmaEngine(c);
+            c = enigma.SifrovaniDesifrovani(comboBox1, comboBox2, comboBox3);
+            string s = textBox1.Text;
+            string s2 = s + c;
+            textBox1.Text = s2;
+        }
+
+        private void button27_Click(object sender, EventArgs e)
+        {
+            char c = char.Parse(button27.Text);
+            EnigmaEngine enigma = new EnigmaEngine(c);
+            c = enigma.SifrovaniDesifrovani(comboBox1, comboBox2, comboBox3);
+            string s = textBox1.Text;
+            string s2 = s + c;
+            textBox1.Text = s2;
+        }
+
+        private void button28_Click(object sender, EventArgs e)
+        {
+            char c = char.Parse(button28.Text);
+            EnigmaEngine enigma = new EnigmaEngine(c);
+            c = enigma.SifrovaniDesifrovani(comboBox1, comboBox2, comboBox3);
+            string s = textBox1.Text;
+            string s2 = s + c;
+            textBox1.Text = s2;
         }
     }
 }

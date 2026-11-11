@@ -11,7 +11,7 @@ namespace enigma_machine
     {
         private string clen1 = "";
         private string clen2 = "";
-        List<string> dvojce = new List<string>();
+        public List<string> dvojce = new List<string>();
         public Plugboard(string clen1, string clen2)
         {
             this.clen1 = clen1;
@@ -24,6 +24,25 @@ namespace enigma_machine
         public void Zapsat()
         {
             dvojce.Add(clen1 + clen2);
+        }
+        public char zmenaPismena(char c)
+        {
+            bool nalezen = false;
+            for (int i = 0; i < dvojce.Count() && !nalezen; i++)
+            {
+                string s = dvojce[i].ToString();
+                if (s[0] == c)
+                {
+                    c = s[1];
+                    nalezen = true;
+                }
+                else if (s[1] == c)
+                {
+                    c = s[0];
+                    nalezen = true;
+                }
+            }
+            return c;
         }
     }
 }
