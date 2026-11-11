@@ -47,5 +47,6 @@ namespace enigma_machine
             c = (char)comboBox3.Items[nastaveni[znakIndex]];
             return c;
         }
+
     }
 }
