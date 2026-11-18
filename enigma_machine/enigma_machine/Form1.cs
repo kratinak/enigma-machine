@@ -342,5 +342,13 @@ namespace enigma_machine
             //string s2 = s + c;
             //textBox1.Text = s2;
         }
+
+        private void panel6_MouseMove(object sender, MouseEventArgs e)
+        {
+            panel6.Location = new Point(
+        button1.Location.X + e.X,
+        button1.Location.Y + e.Y
+    );
+        }
     }
 }
